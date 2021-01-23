@@ -1,0 +1,17 @@
+---
+config:
+  #failure.emails: 1214972346@qq.com
+
+nodes:
+ - name: JobA
+   type: command
+   config:
+     command: echo 123
+
+ - name: JobB
+   type: command
+   dependsOn:
+     - JobA
+   config:
+     command: echo "This is JobB."
+   condition: ${JobA:param1} == 1

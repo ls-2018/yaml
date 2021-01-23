@@ -1,0 +1,12 @@
+---
+config:
+ failure.emails: 1214972346@qq.com
+
+nodes:
+ - name: JobA
+   type: command
+   config:
+     command: echo ${JobA:param1}
+
+
+
